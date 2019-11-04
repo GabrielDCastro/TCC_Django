@@ -5,3 +5,6 @@ def home(request):
 
 def contato(request):
     return render(request, 'home/contato.html')
+
+def perfil(request):
+    return render(request, 'home/perfil.html')
