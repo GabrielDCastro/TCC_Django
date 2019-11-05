@@ -2,13 +2,15 @@
 from setuptools import setup, find_packages
 
 requires = [
-        'django'
+        'django',
+        'pillow',
+        'gunicorn',
+        'django-heroku'
         ]
 
 setup(name='mysite',
       version='1.0',
       packages=find_packages(),
-      install_requires=requires,
-      scripts=['./projeto/manage.py'])
+      install_requires=requires)
 
 
