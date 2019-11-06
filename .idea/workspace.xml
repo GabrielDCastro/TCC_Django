@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e987851-74b7-47ff-9d57-cc8e29f0cd44" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/home/static/font/logo.ttf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/home/static/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/home/contato.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/contato.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/home/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/home/templates/home/perfil.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/perfil.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,7 +12,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/home/static/css/styles.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="176">
@@ -45,7 +39,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/home/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="656">
@@ -91,6 +85,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="inaba2" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
@@ -210,6 +209,14 @@
       <option name="presentableId" value="Default" />
       <updated>1573047164264</updated>
     </task>
+    <task id="LOCAL-00001" summary="Fonte da logo;&#10;Cor da logo&#10;Fonte da descriçao da logo;&#10;Código da logo movido para a base;">
+      <created>1573056052218</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1573056052218</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -233,6 +240,10 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fonte da logo;&#10;Cor da logo&#10;Fonte da descriçao da logo;&#10;Código da logo movido para a base;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fonte da logo;&#10;Cor da logo&#10;Fonte da descriçao da logo;&#10;Código da logo movido para a base;" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/README.md">
@@ -330,17 +341,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/home/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="656">
-          <caret line="65" column="43" selection-start-line="65" selection-start-column="43" selection-end-line="65" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/home/static/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="45" column="10" lean-forward="true" selection-start-line="45" selection-start-column="10" selection-end-line="45" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/home/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="656">
+          <caret line="65" column="43" selection-start-line="65" selection-start-column="43" selection-end-line="65" selection-end-column="43" />
         </state>
       </provider>
     </entry>
