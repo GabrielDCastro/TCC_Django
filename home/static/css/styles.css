@@ -3,6 +3,13 @@
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+
+@font-face {
+    color:black;
+    font-family: logofonte;
+    src: url('../font/logo.ttf');
+}
+
 body {
     margin: 0 auto;
     line-height: 1.7em;
@@ -32,10 +39,11 @@ body .primary-button {
     background: #1cca16;
 }
 .splash .splash-head {
+    font-family: logofonte;
     font-size: 300%;
     margin: 0em 0;
     line-height: 1.2em;
-    color: #dbdfdb;
+    color:black;
 }
 .splash .splash-subhead {
     color: #ffffff;
@@ -72,5 +80,5 @@ body .primary-button {
     color: #666;
     text-align: center;
     padding: 1em;
-    font-size: 80%;
+    font-size: 200%;
 }
