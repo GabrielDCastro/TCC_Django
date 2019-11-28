@@ -1,7 +1,6 @@
 from django.db import models
 
 class CourseManager(models.Manager):
-
     def search(self, query):
         return self.get_queryset().filter(
             models.Q(name_icontains=query)
@@ -41,3 +40,14 @@ class Course(models.Model):
         verbose_name = 'Curso'
         verbose_name_plural = "Cursos"
         ordering = ['name']
+
+'''
+class Enrollment(models.Model):
+
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL, verbose_name="Usuário",
+        related_name='enrollments'
+    )
+    course = models.ForeignKey(
+        Course, verbose_name='Curso', related_name='enrollments'
+    )'''

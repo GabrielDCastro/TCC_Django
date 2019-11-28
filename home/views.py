@@ -22,6 +22,7 @@ def duvidas(requests):
         form = Contact(requests.POST)
         if form.is_valid():
             context['is_valid'] = True
+            form.send_email()
             form = Contact()
     else:
         form = Contact()
