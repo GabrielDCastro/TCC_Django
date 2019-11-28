@@ -41,7 +41,7 @@ class Course(models.Model):
         verbose_name_plural = "Cursos"
         ordering = ['name']
 
-''''''
+'''
 class Enrollment(models.Model):
 
     STATUS_CHOICES = (
@@ -76,3 +76,4 @@ class Enrollment(models.Model):
         verbose_name = 'Inscrição'
         verbose_name_plural = 'Inscrições'
         unique_together = (('user', 'course'),)
+'''

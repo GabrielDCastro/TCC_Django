@@ -18,7 +18,7 @@ def details(request, pk):
     template_name = 'courses/details.html'
     return render(request, template_name, context)
 
-''''''
+'''
 @login_required
 def enrollment(request, slug):
     course = get_object_or_404(Course, slug=slug)
@@ -28,3 +28,4 @@ def enrollment(request, slug):
     #if created:
     #   enrollment.active()
     return redirect('accounts:dashboard')
+'''
