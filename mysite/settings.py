@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home',
     'courses',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -136,3 +137,6 @@ EMAIL_HOST_PASSWORD = 'senha'
 EMAIL_PORT = 587
 
 CONTACT_EMAIL = 'gabriel.rangel@sempreceub.com'
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'

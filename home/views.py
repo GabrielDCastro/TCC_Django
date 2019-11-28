@@ -10,8 +10,8 @@ def contato(request):
 def perfil(request):
     return render(request, 'home/perfil.html')
 
-def login(request):
-    return render(request, 'home/Login.html')
+#def login(request):
+#    return render(request, 'home/Login.html')
 
 def registrar(request):
     return render(request, 'home/registrar.html')
