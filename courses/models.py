@@ -41,7 +41,7 @@ class Course(models.Model):
         verbose_name_plural = "Cursos"
         ordering = ['name']
 
-'''
+''''''
 class Enrollment(models.Model):
 
     STATUS_CHOICES = (
@@ -56,8 +56,10 @@ class Enrollment(models.Model):
     course = models.ForeignKey(
         Course, verbose_name='Curso', related_name='enrollments'
     )
-    status = models.IntegerField('Situação', choices=STATUS_CHOICES, default=0, blank=True
-                                 )
+    status = models.IntegerField(
+        'Situação', choices=STATUS_CHOICES, default=1, blank=True
+    )
+
     created_at = models.DateTimeField(
         'Criado em', auto_now_add=True
     )
@@ -66,8 +68,11 @@ class Enrollment(models.Model):
         'Atualizado em', auto_now=True
     )
 
+    def active(self):
+        self.status = 1
+        self.save()
+
     class Meta:
         verbose_name = 'Inscrição'
         verbose_name_plural = 'Inscrições'
         unique_together = (('user', 'course'),)
-'''
