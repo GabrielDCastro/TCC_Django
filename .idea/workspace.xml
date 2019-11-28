@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7e987851-74b7-47ff-9d57-cc8e29f0cd44" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/courses/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/courses/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/courses/templates/courses/cursos.html" beforeDir="false" afterPath="$PROJECT_DIR$/courses/templates/courses/cursos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/templates/home/registrar.html" beforeDir="false" afterPath="$PROJECT_DIR$/home/templates/home/registrar.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,12 +26,6 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="260" />
-    <option name="y" value="20" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
   </component>
   <component name="ProjectId" id="1TIAez6McIzAb4bZ7xxUYazR6XM" />
   <component name="PropertiesComponent">
