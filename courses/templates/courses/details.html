@@ -2,12 +2,13 @@
 {% load static %}
 
 {% block content %}
+<font face="arial" color="black">
 <div class="content">
         <div class="pure-g-r content-ribbon">
             <div class="pure-u-2-3">
                 <div class="l-box">
                     <h1 >{{ course }}</h1>
-                    <h3 class="content-subhead">Sobre o curso </h3>
+                    <h1 class="content-subhead"><font color="black">Sobre o curso</font> </h1>
                     <p>
                         {{ course.descripition }}
                     </p>
@@ -26,4 +27,5 @@
         </div>
     </div>
 </div>
+</font>
 {% endblock %}

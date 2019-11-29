@@ -43,9 +43,8 @@
 <div class="content">
     <div class="header">
         <div class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal">
-
+            <font face="Arial">
             <ul>
-                <li class="pure-menu-heading" href="">Revento</li>
                 <li class="pure-menu-selected"><a href="{% url 'home' %}">Início</a></li>
                 <li><a href="{% url 'cursos' %}">Cursos</a></li>
                 <li><a href="{% url 'contato' %}">Contato</a></li>
@@ -62,6 +61,7 @@
                     </li>
                 {% endif %}
             </ul>
+            </font>
         </div>
     </div>
 </div>
@@ -69,13 +69,15 @@
         <div class="pure-g-r">
             <div class="pure-u-1">
                 <div class="l-box splash-text">
-                    <h1 class="splash-head">
-                        REVENTO
+                    <h1 class="splash-head"><a href="{% url 'home' %}">
+                        <font color="black">
+                        REVENTO</font></a>
 
                     </h1>
                     <h2 class="splash-subhead">
-                        <font face="Arial">
+                        <font face="Arial" color="black">
                         Plataforma de ensino EAD
+                        </font>
                     </h2>
 
                 </div>
