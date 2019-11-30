@@ -50,7 +50,7 @@
                 <li><a href="{% url 'contato' %}">Contato</a></li>
                 <li><a href="{% url 'perfil' %}">Perfil</a></li>
                 <li><a href="{% url 'duvidas' %}">Dúvidas</a></li>
-                <li><a href="{% url 'registrar' %}">Registrar</a></li>
+                <li><a href="{% url 'register' %}">Registrar</a></li>
                 {% if user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'logout' %}">Sair</a>

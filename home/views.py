@@ -13,8 +13,8 @@ def perfil(request):
 #def login(request):
 #    return render(request, 'home/Login.html')
 
-def registrar(request):
-    return render(request, 'home/registrar.html')
+#def registrar(request):
+    #return render(request, 'home/registrar.html')
 
 def duvidas(requests):
     context = {}
