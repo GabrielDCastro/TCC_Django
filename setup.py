@@ -5,7 +5,8 @@ requires = [
         'django',
         'pillow',
         'gunicorn',
-        'django-heroku'
+        'django-heroku',
+        'django-extensions'
         ]
 
 setup(name='mysite',

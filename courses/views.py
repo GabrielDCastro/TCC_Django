@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Course
+from .models import Course, Announcement
 
 '''
 from django.shortcuts import get_object_or_404, redirect
@@ -22,6 +22,15 @@ def details(request, pk):
     }
     template_name = 'courses/details.html'
     return render(request, template_name, context)
+
+def announcements(request):
+    course = request.course
+    template = 'courses/announcements.html'
+    context = {
+        'course': course,
+        'announcements': course.announcements.all()
+    }
+    return render(request, template, context)
 
 '''
 @login_required
