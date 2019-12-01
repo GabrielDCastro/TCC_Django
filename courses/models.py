@@ -44,7 +44,7 @@ class Course(models.Model):
 
 
 class Announcement(models.Model):
-    #course = models.ForeignKey(Course, verbose_name="Curso")
+    '''course = models.ForeignKey(Course, verbose_name="Curso")'''
     tittle = models.CharField('Título', max_length=100)
     content = models.TextField("Conteúdo")
 
@@ -64,7 +64,7 @@ class Announcement(models.Model):
         verbose_name_plural = 'Anúncios'
 
 class Comment(models.Model):
-    #announcement = models.ForeignKey(Announcement, verbose_name='Anúncio', related_name='comments')
+    '''announcement = models.ForeignKey(Announcement, verbose_name='Anúncio', related_name='comments')'''
     comment = models.TextField("Comentário")
 
     created_at = models.DateTimeField(

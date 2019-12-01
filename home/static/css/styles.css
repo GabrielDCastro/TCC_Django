@@ -36,7 +36,7 @@ body .primary-button {
 .splash {
     margin: 0;
     padding: 1em 0.5em;
-    background: #1cca16;
+    background: #0D58ED;
 }
 .splash .splash-head {
     font-family: logofonte;
@@ -76,7 +76,7 @@ body .primary-button {
     font-weight: normal;
 }
 .footer {
-    background: #1cca16;
+    background: #0D58ED;
     color: #666;
     text-align: center;
     padding: 1em;
