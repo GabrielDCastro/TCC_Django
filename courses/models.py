@@ -1,5 +1,6 @@
-from django.conf import settings
 from django.db import models
+from django.conf import settings
+from django.utils import timezone
 
 class CourseManager(models.Manager):
     def search(self, query):
@@ -79,6 +80,28 @@ class Comment(models.Model):
         verbose_name = 'Comentário'
         verbose_name_plural = 'Comentários'
         ordering = ['created_at']
+
+class lesson(models.Model):
+    name = models.CharField('Nome', max_length=100)
+    desccription = models.TextField('Descrição', blank=True)
+    number = models.IntegerField('Numero (ordem)', blank=True, default=0)
+    release_date = models.DateField('Data de liberação', blank=True, null=True)
+    created_at = models.DateTimeField('Criado em', auto_now_add=True)
+    updated_at = models.DateTimeField('Atualizado em', auto_now=True)
+
+    def __str__(self):
+        return self.name
+
+    def is_available(self):
+        if self.release_date:
+            today = timezone.now().date()
+            return self.release_date >= today
+        return False
+
+    class Meta:
+        verbose_name = 'Aula'
+        verbose_name_plural = 'Aulas'
+        ordering = ['number']
 
 
 '''

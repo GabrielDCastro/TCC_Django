@@ -32,6 +32,14 @@ def announcements(request):
     }
     return render(request, template, context)
 
+
+def lessons(requests, slug):
+    course = requests.course
+    template = 'courses/lessons.html'
+    context = {
+        'course': course
+    }
+    return render(requests, template, context)
 '''
 @login_required
 def enrollment(request, slug):
