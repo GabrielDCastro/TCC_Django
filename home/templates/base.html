@@ -11,8 +11,16 @@
 
         #menu ul{
             margin: 0;
-            background-color: steelblue;
+            background-color: white;
             list-style: none;
+        }
+
+        #barra {
+             background-color: purple;
+              top: 10;
+              left: 0;
+              right: 0;
+              height: 10px;
         }
 
         #menu ul li{
@@ -27,14 +35,14 @@
         }
 
         #menu ul li a:hover{
-            color: lightblue;
+            color: purple;
         }
     </style>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Ensino a dintância" />
-    <title>Revento</title>
+    <title>Monitoria</title>
 
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
 </head>
@@ -45,7 +53,7 @@
         <div class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal">
             <font face="Arial">
             <ul>
-                <li class="pure-menu-selected"><a href="{% url 'home' %}" style="font-family:logofonte; font-size: 30px;">REVENTO</font></a></li>
+                <li class="pure-menu-selected"><a href="{% url 'home' %}" style="font-family:logofonte; font-size: 30px;">Monitoria CEUB</font></a></li>
                 <font face="arial">
                 <li><a href="{% url 'cursos' %}">Cursos</a></li>
                 <li><a href="{% url 'contato' %}">Contato</a></li>
@@ -71,9 +79,12 @@
 
             </ul>
             </font>
+            <div id="barra">
+            </div>
         </div>
     </div>
 </div>
+
         <style>
         body{
             background-color: white;

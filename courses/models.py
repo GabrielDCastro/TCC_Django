@@ -12,7 +12,9 @@ class Course(models.Model):
 
     name = models.CharField('Nome', max_length=100)
     slug = models.SlugField('Atalho')
-    descripition = models.TextField('Descrição', blank=True)
+    descripition = models.TextField('Descrição')
+    topics = models.TextField('Tópicos')
+    workload = models.IntegerField('Carga horária')
     start_date = models.DateField(
         'Data de início', null=True, blank=True
     )
@@ -43,6 +45,21 @@ class Course(models.Model):
         verbose_name_plural = "Cursos"
         ordering = ['name']
 
+class Turma(models.Model):
+    data_inicio = models.DateField()
+    data_fim = models.DateField()
+    hora_inicio = models.TimeField()
+    hora_fim = models.TimeField()
+    inscricao_inicio = models.DateField()
+    inscricao_fim = models.DateField()
+    arquivado = models.BooleanField()
+    curso = models.ForeignKey(Course, on_delete=models.CASCADE)
+    monitor = models.CharField(max_length=45)
+    link_aula = models.CharField(max_length=150)
+
+    def __str__(self):
+        nome = self.curso.__str__() + " " + self.data_inicio.__str__()
+        return nome
 
 class Announcement(models.Model):
     '''course = models.ForeignKey(Course, verbose_name="Curso")'''
