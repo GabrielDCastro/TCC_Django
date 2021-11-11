@@ -8,17 +8,15 @@ from django.contrib.auth.decorators import login_required
 '''
 
 def cursos(request):
-    courses = Course.objects.all()
-    turmas = Turma.objects.all()
+    courses = Turma.objects.all()
     template_name = 'courses/cursos.html'
     context = {
         'courses': courses,
-        'turmas': turmas
     }
     return render (request, template_name, context)
 
 def details(request, pk):
-    course = Course.objects.get(pk=pk)
+    course = Turma.objects.get(pk=pk)
     context ={
         'course': course
     }
