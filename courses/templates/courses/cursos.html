@@ -10,13 +10,14 @@
         </div>
     </div>
 </div>
+{% if courses %}
 {% for course in courses %}
 <div class="pure-g-r content-ribbon">
     <div class="=pure-u-1-3">
         <div class="l-box">
             <a href="{{ course.get_absolute_url }}">
                 {% if course.image %}
-                <img src="{{ course.image.url }}" style="width:300px; height:300px" alt="{{ course.name }}">
+                <img src="{{ course.image.url }}" style="width:200px; height:200px" alt="{{ course.name }}">
                 {% else %}
                 <img src="{% static 'img/400x400.jpg' %}" alt="{{ course.name }}">
                 {% endif%}
@@ -32,4 +33,5 @@
 </div>
 </font>
 {% endfor %}
+{% endif %}
 {% endblock %}

@@ -15,9 +15,6 @@ class Course(models.Model):
     descripition = models.TextField('Descrição')
     topics = models.TextField('Tópicos')
     workload = models.IntegerField('Carga horária')
-    start_date = models.DateField(
-        'Data de início', null=True, blank=True
-    )
 
     image = models.ImageField(
         upload_to='courses/images', verbose_name='Imagem',
@@ -55,7 +52,7 @@ class Turma(models.Model):
     arquivado = models.BooleanField()
     curso = models.ForeignKey(Course, on_delete=models.CASCADE)
     monitor = models.CharField(max_length=45)
-    link_aula = models.CharField(max_length=150)
+    link_aula = models.CharField(max_length=150, null=True, blank=True)
 
     def __str__(self):
         nome = self.curso.__str__() + " " + self.data_inicio.__str__()

@@ -56,9 +56,7 @@
                 <li class="pure-menu-selected"><a href="{% url 'home' %}" style="font-family:logofonte; font-size: 30px;">Monitoria CEUB</font></a></li>
                 <font face="arial">
                 <li><a href="{% url 'cursos' %}">Cursos</a></li>
-                <li><a href="{% url 'contato' %}">Contato</a></li>
-                <li><a href="{% url 'duvidas' %}">Dúvidas</a></li>
-                <li><a href="{% url 'register' %}">Registrar</a></li>
+                <li><a href="{% url 'contato' %}">Monitores</a></li>
                 </font>
                 {% if user.is_authenticated %}
                     <font face="arial">
@@ -74,6 +72,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'login' %}">Login</a>
                     </li>
+                    <li><a href="{% url 'register' %}">Registrar</a></li>
                      </font>
                 {% endif %}
 
