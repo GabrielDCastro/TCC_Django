@@ -42,6 +42,8 @@ class Course(models.Model):
         verbose_name_plural = "Cursos"
         ordering = ['name']
 
+
+
 class Turma(models.Model):
     data_inicio = models.DateField()
     data_fim = models.DateField()
@@ -53,10 +55,41 @@ class Turma(models.Model):
     curso = models.ForeignKey(Course, on_delete=models.CASCADE)
     monitor = models.CharField(max_length=45)
     link_aula = models.CharField(max_length=150, null=True, blank=True)
+    link_inscricao = models.CharField(max_length=150, null=True, blank=True)
+    escolha_local = (
+        ('TG', 'Taguatinga'),
+        ('AS', 'Asa Norte')
+    )
+    local = models.CharField(
+        max_length=10,
+        choices= escolha_local,
+        default='TG'
+    )
 
     def __str__(self):
         nome = self.curso.__str__() + " " + self.data_inicio.__str__()
         return nome
+
+class Monitor(models.Model):
+    nome = models.CharField('Nome', max_length=100)
+    email = models.CharField(max_length=100)
+    link_monitoria = models.CharField(max_length=100)
+    hora_inicio = models.TimeField()
+    hora_fim = models.TimeField()
+    wpp = models.CharField(max_length=9)
+    escolha_local = (
+        ('TG', 'Taguatinga'),
+        ('AS', 'Asa Norte')
+    )
+    local = models.CharField(
+        max_length=10,
+        choices=escolha_local,
+        default='TG'
+    )
+    arquivado = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.nome
 
 class Announcement(models.Model):
     '''course = models.ForeignKey(Course, verbose_name="Curso")'''

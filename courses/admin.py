@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Course, Announcement, Comment, Turma
+from .models import Course, Announcement, Comment, Turma, Monitor
 
 
 class CourseAdmin(admin.ModelAdmin):
@@ -9,3 +9,4 @@ class CourseAdmin(admin.ModelAdmin):
 admin.site.register(Course, CourseAdmin)
 admin.site.register(Turma)
 admin.site.register([Announcement, Comment])
+admin.site.register(Monitor)

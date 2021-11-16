@@ -23,6 +23,7 @@ def details(request, pk):
     template_name = 'courses/details.html'
     return render(request, template_name, context)
 
+
 def announcements(request):
     course = request.course
     template = 'courses/announcements.html'

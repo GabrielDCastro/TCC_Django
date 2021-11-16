@@ -3,36 +3,84 @@
 
 {% block content %}
 <font face="arial" color="black">
-<div class="pure-g-r content-ribbon">
-    <div class="pure-u-1">
-        <div class="l-box">
-            <h1 class="content-subgead">Cursos Disponíveis</h1>
+    <div class="pure-g-r content-ribbon">
+        <div class="pure-u-1">
+            <div class="l-box">
+                <h1 class="content-subgead">Cursos do Semestre</h1>
+            </div>
         </div>
     </div>
-</div>
-{% if courses %}
-{% for course in courses %}
-<div class="pure-g-r content-ribbon">
-    <div class="=pure-u-1-3">
-        <div class="l-box">
-            <a href="{{ course.curso.get_absolute_url }}">
-                {% if course.curso.image %}
-                {{ course.curso.name }}
-                <img src="{{ course.curso.image.url }}" style="width:200px; height:200px" alt="{{ course.curso.name }}">
-                {% else %}
-                <img src="{% static 'img/400x400.jpg' %}" alt="{{ course.name }}">
-                {% endif%}
-            </a>
+    <div class="ui container">
+        <div class="ui stackable grid">
+            {% if courses %}
+            {% for course in courses %}
+            {% if course.arquivado == False %}
+            <div class="four wide column">
+                <div class="ui fluid card">
+                    <a href="{{ course.curso.get_absolute_url }}">
+                        {% if course.curso.image %}
+                        <img src="{{ course.curso.image.url }}" style="width:100%; height:100%"
+                             alt="{{ course.curso.name }}">
+                        {% else %}
+                        <img src="{% static 'img/400x400.jpg' %}" alt="{{ course.name }}">
+                        {% endif%}
+                    </a>
+                    <div class="content">
+                        <a class="header" href="{{ course.curso.get_absolute_url }}">{{ course.curso.name }}</a>
+                        <div class="meta">
+                            <h3>{{course.get_local_display}}</h3>
+                            <h3>Monitor: {{course.monitor}}</h3>
+                            <h4>Curso se inicia: <br>{{course.data_inicio}}</h4>
+                            <h4>Inscrições a partir: <br>{{course.inscricao_inicio}}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+
         </div>
     </div>
-    <div class="pure-u-2-3">
-        <div class="l-box">
-            <h4 class="content-subhead"><a href="{{ course.curso.get_absolute_url }}" title="">{{ course.curso.nome }}</a> </h4>
-            {{ course.curso.descripition|linebreaks}}
-        </div>
-    </div>
-</div>
 </font>
-{% endfor %}
-{% endif %}
-{% endblock %}
+
+<font face="arial" color="black">
+    <div class="pure-g-r content-ribbon">
+        <div class="pure-u-1">
+            <div class="l-box">
+                <h1 class="content-subgead">Cursos Aquivados</h1>
+            </div>
+        </div>
+    </div>
+    <div class="ui container">
+        <div class="ui stackable grid">
+            {% if courses %}
+            {% for course in courses %}
+            {% if course.arquivado == True %}
+            <div class="four wide column">
+                <div class="ui fluid card">
+                    <a href="{{ course.curso.get_absolute_url }}">
+                        {% if course.curso.image %}
+                        <img src="{{ course.curso.image.url }}" style="width:100%; height:100%"
+                             alt="{{ course.curso.name }}">
+                        {% else %}
+                        <img src="{% static 'img/400x400.jpg' %}" alt="{{ course.name }}">
+                        {% endif%}
+                    </a>
+                    <div class="content">
+                        <a class="header" href="{{ course.curso.get_absolute_url }}">{{ course.curso.name }}</a>
+                        <div class="meta">
+                            <h3>{{course.get_local_display}}</h3>
+                            <h3>Monitor: {{course.monitor}}</h3>
+                            <h4>Curso iniciou: <br>{{course.data_inicio}}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+            {% endif %}
+            {% endblock %}
+        </div>
+    </div>
+</font>

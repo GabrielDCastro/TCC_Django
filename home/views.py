@@ -1,11 +1,18 @@
 from django.shortcuts import render
 from .forms import Contact
 
+from .models import Monitor
+
 def home(request):
     return render(request, 'home/home.html')
 
 def contato(request):
-    return render(request, 'home/contato.html')
+    monitores = Monitor.objects.all()
+    template_name = 'home/contato.html'
+    context = {
+        'monitores': monitores
+    }
+    return render (request, template_name, context)
 
 def perfil(request):
     return render(request, 'home/perfil.html')
