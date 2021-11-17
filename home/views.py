@@ -7,7 +7,7 @@ def home(request):
     return render(request, 'home/home.html')
 
 def contato(request):
-    monitores = Monitor.objects.all()
+    monitores = Monitor.objects.all().order_by('local', 'hora_inicio')
     template_name = 'home/contato.html'
     context = {
         'monitores': monitores

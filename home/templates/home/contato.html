@@ -1,38 +1,59 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="content">
-    {% for monitor in monitores %}
-    <div class="ui card">
-        <div class="content">
-            <div class="header">{{ monitor }}</div>
-        </div>
-        <div class="content">
-            <h4 class="ui sub header">Activity</h4>
-            <div class="ui small feed">
-                <div class="event">
-                    <div class="content">
-                        <div class="summary">
-                            <a>Elliot Fu</a> added <a>Jenny Hess</a> to the project
-                        </div>
-                    </div>
-                </div>
-                <div class="event">
-                    <div class="content">
-                        <div class="summary">
-                            <a>Stevie Feliciano</a> was added as an <a>Administrator</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="event">
-                    <div class="content">
-                        <div class="summary">
-                            <a>Helen Troy</a> added two pictures
-                        </div>
-                    </div>
-                </div>
+<font face="arial" color="black">
+    <div class="pure-g-r content-ribbon">
+        <div class="pure-u-1">
+            <div class="l-box">
+                <h1 class="content-subgead">Cursos do Semestre</h1>
             </div>
         </div>
     </div>
-    {% endfor %}
-</div>
+    <div class="ui container">
+        <div class="ui stackable grid">
+            {% for monitor in monitores %}
+            {% if monitor.arquivado == False %}
+            <div class="four wide column">
+                <div class="ui fluid card">
+                  <div class="content">
+                    <div class="header">{{ monitor }}</div>
+                      <div class="summary" style="color:purple">{{monitor.get_local_display}}</div>
+                </div>
+                <div class="content">
+                    <h4 class="summary">Horário: {{monitor.hora_inicio}} às {{monitor.hora_fim}}</h4>
+                    <div class="event">
+                        <div class="content">
+                            <div class="summary">
+                                <h4>{{ monitor.email }}</h4>
+                            </div>
+                        </div>
+                    </div>
+                      <div class="event">
+                        <div class="content">
+                            <div class="summary">
+                                <h4>WhatsApp: {{ monitor.wpp }}</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="event">
+                        <div class="content">
+                            <div class="summary">
+                                <h4>Google Meet:
+                                    <a href="{{monitor.link_monitoria}}">
+                                        <img src="data:image/png;base64,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"
+                                             height=100px;" width="100px;">
+                                    </a>
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+
+
+        </div>
+    </div>
+</font>
 {% endblock %}
