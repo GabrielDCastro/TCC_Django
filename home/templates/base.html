@@ -1,44 +1,7 @@
-
 <!doctype html>
 {% load static %}
 <html lang="en">
 <head>
-    <style>
-        body{
-            margin: 0;
-
-        }
-
-        #menu ul{
-            margin: 0;
-            background-color: white;
-            list-style: none;
-        }
-
-        #barra {
-             background-color: purple;
-              top: 10;
-              left: 0;
-              right: 0;
-              height: 10px;
-        }
-
-        #menu ul li{
-            display: inline;
-        }
-
-        #menu ul li a{
-            padding: 10px 10px;
-            display: inline-block;
-            color: black;
-            text-decoration: none;
-        }
-
-        #menu ul li a:hover{
-            color: purple;
-        }
-    </style>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Ensino a dintância" />
@@ -48,60 +11,33 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.css">
     <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.8.8/dist/semantic.min.js"></script>
 </head>
-<body>
-<div id = "menu">
-<div class="content">
-    <div class="header">
-        <div class="pure-menu pure-menu-open pure-menu-fixed pure-menu-horizontal">
-            <font face="Arial">
-            <ul>
-                <li class="pure-menu-selected"><a href="{% url 'home' %}" style="font-family:logofonte; font-size: 30px;">Monitoria CEUB</font></a></li>
-                <font face="arial">
-                <li><a href="{% url 'cursos' %}">Cursos</a></li>
-                <li><a href="{% url 'contato' %}">Monitores</a></li>
-                </font>
+<header>
+
+    <div class="center">
+            <div class="logo"><a></a></div>
+            <ul class="mainMenu">
+                <li class=""><a href="{% url 'home' %}" target="">Início</a>
+                </li>
+                <li class=""><a href="{% url 'cursos' %}" target="">Cursos</a>
+                </li>
+                <li class=""><a href="{% url 'contato' %}" target="">Monitores</a>
+                </li>
                 {% if user.is_authenticated %}
-                    <font face="arial">
-                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'perfil' %}">Perfil</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'logout' %}">Sair</a>
-                    </li>
-                    </font>
-                {% else %}
-                     <font face="arial">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'login' %}">Login</a>
-                    </li>
-                    <li><a href="{% url 'register' %}">Registrar</a></li>
-                     </font>
-                {% endif %}
-
+                         <li class=""><a href="{% url 'perfil' %}" target="">Perfil</a>
+                        </li>
+                        <li class=""><a href="{% url 'logout' %}" class="Destaque">Sair</a>
+                        </li>
+                    {% else %}
+                        <li><a href="{% url 'register' %}" target="">Registrar</a>
+                        </li>
+                        <a href="{% url 'login' %}" class="Destaque"> Login </a>
+                    {% endif %}
             </ul>
-            </font>
-            <div id="barra">
-            </div>
-        </div>
-    </div>
-</div>
 
-        <style>
-        body{
-            background-color: white;
-        }
-    </style>
     </div>
-    <div class="content">
-          {% if user.is_authenticated %}
-        <p class="logged-in-p">
-            <font face="arial">
-            Olá {{ user.username }} seja bem vindo, o que deseja fazer hoje?
-            <span class="sair"><a href="{% url 'logout' %}">Sair</a></span>
-            </font>
-        </p>
-    {% endif %}
-    {% block content %}{% endblock %}
-</div>
+</header>
+<body>
+<h2></h2>
+{% block content %}{% endblock %}
 </body>
 </html>

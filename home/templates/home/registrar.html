@@ -1,50 +1,24 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
+{% block title %}Crie sua conta{% endblock %}
 {% block content %}
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-</head>
-<body>
-<div align="center">
-<font face="Arial">
+<style>
+        .container{
+            max-width: 500px;
+            margin: 0 auto;
+        }
 
-    <form method="post">
-        <h1>REGISTRAR</h1>
-        <input type="text" placeholder="Insira seu nome de usuario"/>
-    </form>
+</style>
+<font face="arial">
+    <div class="container">
+        <h1 style="text-align: center">Crie sua conta</h1>
 
+        <form method="post">
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ next }}">
 
-    <form>
-         <input type="password" placeholder="Insira sua senha"/>
-    </form>
-
-
-    <form>
-        <input type="password" placeholder="Confirme sua senha"/>
-    </form>
-
-
-    <form>
-        <input type="text" placeholder="Insira seu email"/>
-    </form>
-
-
-    <form>
-        <input type="text" placeholder="Confirme seu email"/>
-    </form>
-
-
-    <form>
-        <p class="message"><a href="#">Li e concordo com os termos de uso</a></p>
-    </form>
-
-
-    <form>
-        <button type="submit">Registrar</button>
-    </form>
-</font> <br />
-</div>
-</body>
-</html>
-{% endblock%}
+            {{ form.as_p }}
+            <div style="text-align: center"><input class="btn btn-primary" type="submit" value="Registrar"></div>
+        </form>
+    </div>
+</font>
+{% endblock %}
