@@ -69,86 +69,9 @@ class Turma(models.Model):
     def __str__(self):
         nome = self.curso.__str__() + " " + self.data_inicio.__str__()
         return nome
+    def get_absolute_url(self):
+        return "/cursos/%i/" % self.pk
 
-class Monitor(models.Model):
-    nome = models.CharField('Nome', max_length=100)
-    email = models.CharField(max_length=100)
-    link_monitoria = models.CharField(max_length=100)
-    hora_inicio = models.TimeField()
-    hora_fim = models.TimeField()
-    wpp = models.CharField(max_length=9)
-    escolha_local = (
-        ('TG', 'Taguatinga'),
-        ('AS', 'Asa Norte')
-    )
-    local = models.CharField(
-        max_length=10,
-        choices=escolha_local,
-        default='TG'
-    )
-    arquivado = models.BooleanField(default=False)
-
-    def __str__(self):
-        return self.nome
-
-class Announcement(models.Model):
-    '''course = models.ForeignKey(Course, verbose_name="Curso")'''
-    tittle = models.CharField('Título', max_length=100)
-    content = models.TextField("Conteúdo")
-
-    created_at = models.DateTimeField(
-        'Criado em', auto_now_add=True
-    )
-
-    updated_at = models.DateTimeField(
-        'Atualizado em', auto_now=True
-    )
-
-    def __str__(self):
-        return self.tittle
-
-    class Meta:
-        verbose_name = 'Anúncio'
-        verbose_name_plural = 'Anúncios'
-
-class Comment(models.Model):
-    '''announcement = models.ForeignKey(Announcement, verbose_name='Anúncio', related_name='comments')'''
-    comment = models.TextField("Comentário")
-
-    created_at = models.DateTimeField(
-        'Criado em', auto_now_add=True
-    )
-
-    updated_at = models.DateTimeField(
-        'Atualizado em', auto_now=True
-    )
-
-    class Meta:
-        verbose_name = 'Comentário'
-        verbose_name_plural = 'Comentários'
-        ordering = ['created_at']
-
-class lesson(models.Model):
-    name = models.CharField('Nome', max_length=100)
-    desccription = models.TextField('Descrição', blank=True)
-    number = models.IntegerField('Numero (ordem)', blank=True, default=0)
-    release_date = models.DateField('Data de liberação', blank=True, null=True)
-    created_at = models.DateTimeField('Criado em', auto_now_add=True)
-    updated_at = models.DateTimeField('Atualizado em', auto_now=True)
-
-    def __str__(self):
-        return self.name
-
-    def is_available(self):
-        if self.release_date:
-            today = timezone.now().date()
-            return self.release_date >= today
-        return False
-
-    class Meta:
-        verbose_name = 'Aula'
-        verbose_name_plural = 'Aulas'
-        ordering = ['number']
 
 
 '''

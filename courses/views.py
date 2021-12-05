@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Course, Announcement, Turma
+from .models import Course, Turma
 
 '''
 from django.shortcuts import get_object_or_404, redirect
@@ -8,15 +8,15 @@ from django.contrib.auth.decorators import login_required
 '''
 
 def cursos(request):
-    courses = Turma.objects.all()
+    courses = Turma.objects.all().order_by('local', 'data_inicio')
     template_name = 'courses/cursos.html'
     context = {
         'courses': courses,
     }
     return render (request, template_name, context)
 
-def details(request, pk):
-    course = Turma.objects.get(pk=pk)
+def details(request, fk):
+    course = Turma.objects.get(id=fk)
     context ={
         'course': course
     }
