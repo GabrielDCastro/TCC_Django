@@ -2,6 +2,9 @@ from django.db import models
 from django.conf import settings
 from django.utils import timezone
 
+from home.models import Monitor
+
+
 class CourseManager(models.Manager):
     def search(self, query):
         return self.get_queryset().filter(
@@ -12,7 +15,6 @@ class Course(models.Model):
 
     name = models.CharField('Nome', max_length=100)
     slug = models.SlugField('Atalho')
-    descripition = models.TextField('Descrição')
     topics = models.TextField('Tópicos')
     workload = models.IntegerField('Carga horária')
 
@@ -53,7 +55,7 @@ class Turma(models.Model):
     inscricao_fim = models.DateField()
     arquivado = models.BooleanField()
     curso = models.ForeignKey(Course, on_delete=models.CASCADE)
-    monitor = models.CharField(max_length=45)
+    monitor = models.ForeignKey(Monitor, on_delete=models.CASCADE)
     link_aula = models.CharField(max_length=150, null=True, blank=True)
     link_inscricao = models.CharField(max_length=150, null=True, blank=True)
     escolha_local = (
