@@ -13,6 +13,19 @@ pip install -r requirements.txt
 python setup.py develop
 ```
 
+```
+python manage.py makemigrations
+```
+
+```
+python manage.py migrate
+```
+
+
+```
+python manage.py createsuperuser
+```
+
 4. Teste se funcionou
 
 ```
